@@ -14,7 +14,7 @@ let mouseIsPressed = false;
 
 //Global Variables (Reset)
 let state;
-let currenttime;
+let currenttime = 0;
 let besttime = 0;
 let player1;
 let movingWall1;

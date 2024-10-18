@@ -35,12 +35,7 @@ function moveWalls() {
     movingWall1.direct = 2;
   }
   if (rectCollide(movingWall1, player1)) {
-    player1.x = 130;
-    player1.y = 200;
-    currenttime = 0;
-    movingWall1.color = "red";
-  } else {
-    movingWall1.color = "rgb(73, 73, 155)";
+    gameOver();
   }
   //Wall 2
   movingWall2.y += movingWall2.direct;
@@ -50,11 +45,6 @@ function moveWalls() {
     movingWall2.direct = 2;
   }
   if (rectCollide(movingWall2, player1)) {
-    player1.x = 130;
-    player1.y = 200;
-    currenttime = 0;
-    movingWall2.color = "red";
-  } else {
-    movingWall2.color = "rgb(73, 73, 155)";
+    gameOver;
   }
 }

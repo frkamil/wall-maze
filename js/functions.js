@@ -65,10 +65,6 @@ function checkCollisions() {
 
 function gameOver() {
   state = "gameover";
-  if (currenttime > besttime) {
-    besttime = currenttime;
-  }
-  currentDistance = 0;
   setTimeout(reset, 2000);
 }
 
@@ -78,7 +74,7 @@ function win() {
   if (currenttime > besttime) {
     besttime = currenttime;
   }
-  currentDistance = 0;
+  currenttime = 0;
   setTimeout(reset, 2000);
 }
 
@@ -109,7 +105,6 @@ function drawGameWin() {
 //Helper Functions
 function reset() {
   state = "start";
-  currenttime = 0;
   player1 = {
     x: 130,
     y: 200,
@@ -185,12 +180,11 @@ function drawMainComponents() {
   ctx.font = "30px Georgia";
   ctx.fillStyle = "grey";
   ctx.fillText(`TIME = ${currenttime}`, 60, 35);
-  ctx.fillText(`BEST = ${besttime}`, 300, 35);
+  ctx.fillText(`BEST TIME = ${besttime}`, 300, 35);
+  //   //Star
+  ctx.drawImage(starImg, 500, 135, 100, 100);
 
   //Player One
   ctx.fillStyle = "rgb(73, 73, 155)";
   ctx.fillRect(player1.x, player1.y, player1.w, player1.h);
-
-  //   //Star
-  ctx.drawImage(starImg, 500, 135, 100, 100);
 }
